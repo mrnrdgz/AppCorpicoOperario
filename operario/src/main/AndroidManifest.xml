@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ar.com.corpico.appcorpico">
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    >
+
+    <!-- Autenticación -->
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+
+    <!-- Sincronización -->
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_corpico_app"
+        android:label="SES - Corpico"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".home.HomeActivity"
+            android:label="SES CorpicoApp"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".login.LoginActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".BaseActivity" />
+        <activity
+        android:name=".orders.OrderPendienteActivity"
+        android:label=""
+        android:launchMode="singleTop"
+        android:theme="@style/AppTheme.NoActionBar">
+        <intent-filter>
+            <action android:name="android.intent.action.SEARCH" />
+        </intent-filter>
+
+        <meta-data
+            android:name="android.app.searchable"
+            android:resource="@xml/searchable" />
+    </activity>
+        <activity
+            android:name=".orders.OrderAsignadaActivity"
+            android:label=""
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name=".orderdetail.presentation.OrderDetailActivity"
+            android:label=""
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ordersFilter.OrdersFilterActivity"
+            android:label=""
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBqlx4Abvi_9u8OAOhCTwhBTnmnyculJ3I" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <meta-data
+            android:name="ar.com.corpico.appcorpico.MyGlideModule"
+            android:value="GlideModule" />
+
+        <!--
+       casa AIzaSyBqlx4Abvi_9u8OAOhCTwhBTnmnyculJ3I
+       // trabajo AIzaSyC1VqZmzzXuSEWvCyDnoFkBhqhPJKHZRFA
+         Clave API AIzaSyBRiJ8mlpD5Rfe0RRf2t8tnrpmtCk9yZp8
+         <meta-data  android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyBRiJ8mlpD5Rfe0RRf2t8tnrpmtCk9yZp8"/>
+        -->
+        <provider
+            android:name=".sqlite.CorpicoAppProvider"
+            android:authorities="ar.com.corpico.appcorpico"
+            android:exported="false" />
+
+        <!-- SERVICIO DE AUTENTICACIÓN -->
+        <service android:name=".sync.AuthenticationService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+        <!-- SERVICIO DE SINCRONIZACIÓN -->
+        <service
+            android:name=".sync.SyncService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/sync_adapter" />
+        </service>
+
+        <activity
+            android:name=".orderdetail.presentation.EtapaActivity"
+            android:label="@string/title_activity_etapa" />
+        <activity
+            android:name=".orderdetailimages.GalleryActivity"
+            android:label="Fotos" />
+        <activity
+            android:name=".cuadrillas.CuadrillasActivity"
+            android:label="" />
+        <activity
+            android:name=".operarios.OperarioActivity"
+            android:label="" />
+        <activity
+            android:name=".notes.NotesActivity"
+            android:label="Notas" />
+    </application>
+
+</manifest>

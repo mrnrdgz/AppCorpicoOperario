@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:descendantFocusability="blocksDescendants">
+
+    <!-- Indicador circular -->
+    <View android:layout_width="@dimen/indicator_size"
+        android:layout_height="@dimen/indicator_size"
+        android:id="@+id/indicator"
+        android:background="@drawable/asignadas_indicator"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="28dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_marginLeft="12dp" />
+
+    <!-- Domicilio  -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Domicilio"
+        android:id="@+id/domicilio_text"
+        android:textColor="@android:color/black"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:maxLength="37"
+        android:maxLines="1"
+        android:layout_toRightOf="@+id/indicator" />
+
+    <!-- Tipo_Trabajo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Tipo"
+        android:id="@+id/tipo_text"
+        android:layout_below="@+id/domicilio_text"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:focusable="false"
+        android:padding="5dp"
+        android:focusableInTouchMode="false"
+        android:textStyle="italic" />
+
+    <!-- Titular que realizará la activida -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Titular"
+        android:id="@+id/titular_text"
+        android:textColor="@android:color/black"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:maxLength="37"
+        android:maxLines="1"
+        android:padding="5dp"
+        android:layout_below="@+id/domicilio_text"
+        android:layout_toRightOf="@+id/indicator" />
+
+    <!-- Boton de acción
+    <ImageButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tipo_text"
+        android:layout_alignParentEnd="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        android:background="@drawable/ic_orders" /> -->
+    <!-- Titular que realizará la activida -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Fecha Solicitud"
+        android:id="@+id/fechaSolicitud_text"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_above="@+id/tipo_text"
+        android:padding="5dp"
+        android:layout_alignParentEnd="true" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutRuta"
+        android:layout_below="@+id/titular_text"
+        android:layout_toRightOf="@+id/indicator"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="3dp"
+            app:srcCompat="@drawable/ic_ruta" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Ruta"
+            android:id="@+id/ruta_text"
+            android:focusable="false"
+            android:layout_gravity="center_vertical"
+            android:focusableInTouchMode="false" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tipo_text"
+        android:layout_alignParentEnd="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="TURNO"
+            android:id="@+id/turno_text"
+            android:layout_gravity="center_vertical"
+            android:focusable="false" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:paddingRight="3dp"
+            android:paddingLeft="3dp"
+            app:srcCompat="@drawable/ic_turno_black"
+            android:layout_alignParentEnd="true"
+            android:focusableInTouchMode="false" />
+    </LinearLayout>
+
+</RelativeLayout>

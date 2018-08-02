@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="8dp"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:descendantFocusability="blocksDescendants">
+
+    <!-- Indicador circular -->
+    <View android:layout_width="@dimen/indicator_size"
+        android:layout_height="@dimen/indicator_size"
+        android:id="@+id/indicator"
+        android:background="@drawable/asignadas_indicator"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="28dp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_marginStart="12dp" />
+
+    <!-- fecha  -->
+    <TextView
+        android:id="@+id/fechaEtapa_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/indicator"
+        android:text="Fecha Etapa"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <!-- Observacion Etapa -->
+    <TextView
+        android:id="@+id/observacionEtapa_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/fechaEtapa_text"
+        android:layout_below="@+id/fechaEtapa_text"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:text="Observacion Etapa"
+        android:maxLength="100"
+        android:textAllCaps="true"
+        android:maxLines="2"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textStyle="italic" />
+
+    <!-- Operario Etapa -->
+    <TextView
+        android:id="@+id/operarioEtapa_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fechaEtapa_text"
+        android:layout_alignParentEnd="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:text="Operario Etapa"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+</RelativeLayout>

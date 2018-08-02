@@ -1,0 +1,656 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/window_background"
+    android:orientation="vertical">
+    <!-- App Bar -->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" />
+    </android.support.design.widget.AppBarLayout>
+    <!-- Parte superior -->
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="50"
+        android:scaleType="centerCrop"
+        map:cameraZoom="16"
+        tools:context=".orderdetail.presentation.OrderDetailActivity" />
+
+    <!-- Hero View -->
+    <!--<LinearLayout -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/numero_text"
+            style="@style/TextAppearance.AppCompat.Title.Inverse"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="Numero"
+            android:textIsSelectable="true" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_etapa"
+            android:paddingStart="0dp"
+            android:paddingEnd="8pt"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_etapas" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_gallery"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_gallery" />
+    </LinearLayout>
+
+    <!--</LinearLayout>-->
+    </RelativeLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:fillViewport="true"
+        android:layout_height="0dp"
+        android:layout_weight="70">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/detail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="70"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <!-- Card Orden-->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                card_view:cardElevation="4dp"
+                card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:id="@+id/content1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/activity_horizontal_margin">
+                    <!-- Texto Titulo-->
+                    <TextView
+                        android:id="@+id/orden_titulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Orden"
+                        android:textColor="@color/colorPrimary"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                    <!-- Label Fecha Solicitud-->
+                    <TextView
+                        android:id="@+id/fecha_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/orden_titulo"
+                        android:text="Fecha Solicitud"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Fecha Solicitud-->
+                    <TextView
+                        android:id="@+id/fecha_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/fecha_label"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textIsSelectable="true" />
+                    <!-- Label Fecha Solicitud-->
+                    <TextView
+                        android:id="@+id/turno_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/orden_titulo"
+                        android:text="Turno"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Fecha Solicitud-->
+                    <TextView
+                        android:id="@+id/turno_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/turno_label"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textIsSelectable="true" />
+                    <!-- Etiqueta Tipo de Trabajo-->
+                    <TextView
+                        android:id="@+id/tipotrabajo_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fecha_text"
+                        android:text="Tipo de Trabajo"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Tipo de Trabajo-->
+                    <TextView
+                        android:id="@+id/tipotrabajo_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/tipotrabajo_label"
+                        android:text="Tipo de Trabajo"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <!-- Label Motivo-->
+                    <TextView
+                        android:id="@+id/motivo_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/tipotrabajo_label"
+                        android:text="Motivo"
+                        android:textAppearance="?android:attr/textAppearanceSmall"/>
+
+                    <!-- Texto de Motivo-->
+                    <TextView
+                        android:id="@+id/motivo_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/tipotrabajo_text"
+                        android:text="Motivo"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Card Asociado android:layout_below="@+id/card1"-->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card2"
+                android:layout_width="match_parent"
+                android:layout_height="290dp"
+                android:layout_below="@+id/card1"
+                card_view:cardElevation="4dp"
+                card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/activity_horizontal_margin">
+                    <!-- Texto Titulo-->
+                    <TextView
+                        android:id="@+id/asociado_titulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:paddingBottom="5dp"
+                        android:text="Asociado"
+                        android:textColor="@color/colorPrimary"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                    <!-- Etiqueta Titular  -->
+                    <TextView
+                        android:id="@+id/titular_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/asociado_titulo"
+                        android:text="Titular"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Titular  -->
+                    <TextView
+                        android:id="@+id/titular_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/titular_label"
+                        android:text="Titular"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                    <!-- Label Asociado-->
+                    <TextView
+                        android:id="@+id/asociado_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/titular_label"
+                        android:text="Asociado"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <!-- Texto de Asociado-->
+                    <TextView
+                        android:id="@+id/asociado_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingBottom="12dp"
+                        android:layout_alignTop="@+id/titular_text"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Asociado" />
+
+                    <!-- Etiqueta Domicilio  -->
+                    <TextView
+                        android:id="@+id/domicilio_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/titular_text"
+                        android:text="Domicilio"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Domicilio  -->
+                    <TextView
+                        android:id="@+id/domicilio_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/domicilio_label"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Domicilio"/>
+
+                    <!-- Label Anexo-->
+                    <TextView
+                        android:id="@+id/anexo_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/domicilio_label"
+                        android:text="Anexo"
+                        android:maxLength="37"
+                        android:maxLines="1"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Anexo-->
+                    <TextView
+                        android:id="@+id/anexo_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingBottom="12dp"
+                        android:layout_alignTop="@+id/domicilio_text"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Anexo" />
+
+                    <!-- Etiqueta Grupo  -->
+                    <TextView
+                        android:id="@+id/grupo_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/domicilio_text"
+                        android:text="Grupo"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Grupo -->
+                    <TextView
+                        android:id="@+id/grupo_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/grupo_label"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Grupo"/>
+
+                    <!-- Label Ruta-->
+                    <TextView
+                        android:id="@+id/ruta_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/grupo_label"
+                        android:text="Ruta"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Ruta-->
+                    <TextView
+                        android:id="@+id/ruta_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingBottom="12dp"
+                        android:layout_alignTop="@+id/grupo_text"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Ruta" />
+                    <!-- Etiqueta Orden de Lectura  -->
+                    <TextView
+                        android:id="@+id/orden_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/grupo_text"
+                        android:text="Orden de Lectura"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Orden de Lectura -->
+                    <TextView
+                        android:id="@+id/orden_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/orden_label"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Orden de Lectura"/>
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Card Servicio -->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card3"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/card2"
+                card_view:cardElevation="4dp"
+                card_view:cardUseCompatPadding="true">
+                <RelativeLayout
+                    android:id="@+id/content3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/activity_horizontal_margin">
+
+                    <!-- Texto Titulo-->
+                    <TextView
+                        android:id="@+id/servicio_titulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:paddingBottom="12dp"
+                        android:text="Servicio"
+                        android:textColor="@color/colorPrimary"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+                    <!-- Etiqueta Potencia Declarada  -->
+                    <TextView
+                        android:id="@+id/potenciadeclarada_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/tipousuario_text"
+                        android:text="Potencia Declarada"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Potencia Declarada  -->
+                    <TextView
+                        android:id="@+id/potenciadeclarada_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/potenciadeclarada_label"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Modelo" />
+
+                    <!-- Etiqueta Tipo de Usuario  -->
+                    <TextView
+                        android:id="@+id/tipousuario_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/servicio_titulo"
+                        android:layout_alignParentLeft="true"
+                        android:text="Tipo de Usuario"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Tipo de Usuario  -->
+                    <TextView
+                        android:id="@+id/tipousuario_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/tipousuario_label"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Tipo de Usuario" />
+
+                    <!-- Label Tarifa-->
+                    <TextView
+                        android:id="@+id/tarifa_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/tipousuario_label"
+                        android:text="Tarifa"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto de Tarifa-->
+                    <TextView
+                        android:id="@+id/tarifa_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/tipousuario_text"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Tarifa"/>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Card Datos Tecnicos -->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card4"
+                android:layout_width="match_parent"
+                android:layout_height="235dp"
+                android:layout_below="@+id/card3"
+                android:layout_marginTop="@dimen/margin_top_between_cards"
+                card_view:cardElevation="4dp"
+                card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/activity_horizontal_margin">
+                    <!-- Texto Titulo-->
+                    <TextView
+                        android:id="@+id/medidor_titulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:paddingBottom="12dp"
+                        android:text="Medidor"
+                        android:textColor="@color/colorPrimary"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                    <!-- Etiqueta Medidor  -->
+                    <TextView
+                        android:id="@+id/medidor_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/medidor_titulo"
+                        android:layout_alignParentLeft="true"
+                        android:text="Nº Medidor"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Medidor  -->
+                    <TextView
+                        android:id="@+id/medidor_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/medidor_label"
+                        android:layout_alignParentLeft="true"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Medidor"/>
+
+                    <!-- Label Marca-->
+                    <TextView
+                        android:id="@+id/marca_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/medidor_label"
+                        android:text="Marca"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto de Marca-->
+                    <TextView
+                        android:id="@+id/marca_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/medidor_text"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Marca"/>
+
+                    <!-- Etiqueta Modelo  -->
+                    <TextView
+                        android:id="@+id/modelo_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/medidor_text"
+                        android:layout_alignParentLeft="true"
+                        android:text="Modelo"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Modelo  -->
+                    <TextView
+                        android:id="@+id/modelo_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/modelo_label"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Modelo" />
+
+                    <!-- Etiqueta Factor H -->
+                    <TextView
+                        android:id="@+id/factorm_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignTop="@+id/modelo_label"
+                        android:layout_alignParentRight="true"
+                        android:text="Factor M"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <!-- Texto Factor H  -->
+                    <TextView
+                        android:id="@+id/factorm_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/modelo_text"
+                        android:layout_below="@+id/marca_label"
+                        android:paddingBottom="12dp"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Factor H" />
+
+                    <!-- Label Capacidad-->
+                    <TextView
+                        android:id="@+id/capacidad_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/modelo_text"
+                        android:text="Capacidad"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                    <!-- Texto de Capacidad-->
+                    <TextView
+                        android:id="@+id/capacidad_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/capacidad_label"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Capacidad"/>
+
+
+                    <!-- Label Tension-->
+                    <TextView
+                        android:id="@+id/tension_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignTop="@+id/capacidad_label"
+                        android:text="Tensión"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                    <!-- Texto Tension -->
+                    <TextView
+                        android:id="@+id/tension_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/tension_label"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:text="Tension"/>
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Card Datos Observaviones -->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card5"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/card4"
+                android:layout_marginTop="@dimen/margin_top_between_cards"
+                card_view:cardElevation="4dp"
+                card_view:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/activity_horizontal_margin">
+
+                    <!-- Texto Titulo-->
+                    <TextView
+                        android:id="@+id/observacion_titulo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Observación"
+                        android:paddingBottom="12dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+                    <!-- Texto de Observacion-->
+                    <TextView
+                        android:id="@+id/observacion_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@+id/observacion_titulo"
+                        android:text="Observación"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+                </RelativeLayout>
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+</LinearLayout>

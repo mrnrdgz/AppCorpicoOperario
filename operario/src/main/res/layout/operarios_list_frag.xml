@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/list_operario"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="ar.com.corpico.appcorpico.operarios.OperarioActivity"
+    tools:showIn="@layout/operarios_list_act">
+
+    <!-- Orders progress -->
+    <ProgressBar
+        android:id="@+id/operarios_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+    <ListView
+        android:id="@+id/operarios_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:paddingTop="24dp"
+        android:layout_alignParentTop="true"
+        tools:listitem="@layout/list_item_operarios" />
+    <TextView
+        android:id="@+id/oeperarios_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        android:text="@string/emptyList"
+        android:gravity="center_horizontal"
+        style="@android:style/TextAppearance.Large"/>
+
+</RelativeLayout>

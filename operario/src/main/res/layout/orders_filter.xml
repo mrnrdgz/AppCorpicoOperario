@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="@dimen/dialog_body">
+
+    <ScrollView
+        android:id="@+id/filter_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/seccion_tipotrabajo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <!-- Boton de acción  -->
+                <ImageButton
+                    android:id="@+id/tipo_trabajo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:padding="@dimen/button_padding"
+                    android:backgroundTint="@color/colorAccent"
+                    android:background="@drawable/ic_tipos_trabajos" />
+                <TextView
+                    android:id="@+id/titulo_tipo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:padding="@dimen/button_padding"
+                    android:textColor="@color/colorPrimary"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+                <!-- Boton de acción  -->
+                <ImageButton
+                    android:id="@+id/zona"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/button_padding"
+                    android:clickable="true"
+                    android:backgroundTintMode="add"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:background="@drawable/ic_zona" />
+                <TextView
+                    android:id="@+id/titulo_zona"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/button_padding"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:text="Zona"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                </LinearLayout>
+
+            <!--<TextView
+                android:id="@+id/tv_tipotrabajo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/edit_text_padding"
+                android:inputType="textMultiLine"
+                android:text="Tipo de Trabajo"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+            <TextView
+                android:id="@+id/titulo_zona"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/edit_text_padding"
+                android:text="Zona"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            <TextView
+                android:id="@+id/tv_zona"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/edit_text_padding"
+                android:inputType="textMultiLine"
+                android:text="Tipo de Trabajo"
+                android:textAppearance="?android:attr/textAppearanceMedium" />-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/cancelar_boton"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="CANCELAR"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorAccent" />
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/aplicar_boton"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="APLICAR"
+                    android:background="@android:color/transparent"
+                    android:textColor="@color/colorAccent" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

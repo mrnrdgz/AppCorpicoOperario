@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false">
+
+    <LinearLayout
+        android:id="@+id/list_home"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical"
+        tools:context="ar.com.corpico.appcorpico.home.HomeActivity">
+
+        <TextView
+            android:id="@+id/fechaHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            tools:text="@tools:sample/date/mmddyy" />
+
+        <!-- Card Cuadrilla-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_cuadrillas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"
+            app:cardElevation="4dp"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Title"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:id="@+id/content1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_horizontal_margin">
+                <TextView
+                    android:id="@+id/titleCuadrillaHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Ordenes por cuadrilla"/>
+
+                <ListView
+                    android:id="@+id/cuadrillaHome_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    tools:listitem="@layout/list_item_cuadrilla_home" />
+
+                <TextView
+                    android:id="@+id/cuadrillaHome_empty"
+                    style="@android:style/TextAppearance.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/emptyList"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <!-- Card Estados-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_estados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"
+            app:cardElevation="4dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:id="@+id/content2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:id="@+id/titleEstadoHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Ordenes por estados"/>
+
+                <ListView
+                    android:id="@+id/estadosHome_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="10dp"
+                    tools:listitem="@layout/list_item_estados_home" />
+
+                <TextView
+                    android:id="@+id/estadosHome_empty"
+                    style="@android:style/TextAppearance.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/emptyList"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <!-- Card Tipos de Trabajo-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_Tipo_Trabajo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"
+            app:cardElevation="4dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:id="@+id/content3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_horizontal_margin">
+                <TextView
+                    android:id="@+id/titleTipoTrabajoHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Ordenes por tipo de trabajo"/>
+
+                <ListView
+                    android:id="@+id/tipoTrabajoHome_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    tools:listitem="@layout/list_item_tipos_trabajos_home" />
+
+                <TextView
+                    android:id="@+id/tipoTrabajoHome_empty"
+                    style="@android:style/TextAppearance.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/emptyList"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+        <!-- Card Zona-->
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_zona"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="16dp"
+            app:cardElevation="4dp"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:id="@+id/content4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:id="@+id/titleZonaHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Ordenes por zona"/>
+
+                <ListView
+                    android:id="@+id/zonaHome_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    tools:listitem="@layout/list_item_zonas_home" />
+
+                <TextView
+                    android:id="@+id/zonaHome_empty"
+                    style="@android:style/TextAppearance.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/emptyList"
+                    android:visibility="gone" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

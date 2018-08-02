@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:descendantFocusability="blocksDescendants">
+
+    <!-- foto operario -->
+    <ImageView
+        android:id="@+id/operario_foto"
+        android:layout_width="40dp"
+        android:layout_height="40dp"/>
+
+    <!--Operario  -->
+    <TextView
+        android:id="@+id/operario_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/operario_foto"
+        android:text="operario"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <!-- Boton de acción -->
+    <ImageButton
+        android:id="@+id/eliminarOperario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/operario_text"
+        android:layout_alignParentEnd="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+        style="@style/Base.Widget.AppCompat.Button.Borderless"
+        app:srcCompat="@drawable/twotone_clear_24" />
+
+</RelativeLayout>
